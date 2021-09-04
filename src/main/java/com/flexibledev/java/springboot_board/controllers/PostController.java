@@ -33,7 +33,7 @@ public class PostController {
 	public View save(@ModelAttribute Post post) {
 		log.info("============== writing post! " + post.toString());
 		Post newPost = postRepository.saveAndFlush(post);
-		return new RedirectView("/post/" + newPost.getPostId());
+		return new RedirectView("/post/" + newPost.getPostNumber());
 	}
 	
 	@GetMapping("{postId}")
